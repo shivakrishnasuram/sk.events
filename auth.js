@@ -1,5 +1,7 @@
 import {  auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase.js";
 // import { signInWithPopup } from "firebase/auth"
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 
 let signupform = document.getElementById("signup");
 let signinform = document.getElementById("signin");
@@ -12,7 +14,7 @@ btn.addEventListener("click", () => {
     signinform.style.display = "inline-block"
     signupform.style.display = "none"
     btn.style.display = "none"
-    regist.style.display = "block"
+    regist.style.display = "inline-block"
 });
 
 regist.addEventListener("click", () => {
@@ -62,15 +64,19 @@ signinform.addEventListener("submit", (event) => {
         })
 })
 
-// googless.addEventListener("click", () => {
-//     signInWithPopup(auth, provider)
-//         .then((x) => {
-//             console.log("User Info:", x.user);
-//         })
-//         .catch((e) => {
-//             console.error("Sign-in Error:", e);
-//         });
-// });
+
+googless.addEventListener("click", () => {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            // Successful sign-in
+            console.log("User Info:", result.user);
+        })
+        .catch((error) => {
+            // Handle errors
+            console.error("Sign-in Error:", error);
+        });
+});
+
 
 // regist.addEventListener("click", () => {
 //     signinform.style.display = "none";
