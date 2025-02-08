@@ -1,11 +1,13 @@
-import {  auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase.js";
 // import { signInWithPopup } from "firebase/auth"
+import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "./firebase.js";
 
 
 let signupform = document.getElementById("signup");
 let signinform = document.getElementById("signin");
 let btn = document.getElementById("rdlg");
 let regist = document.getElementById("regi");
+let googleSignInBtn = document.getElementById("googleSignIn");
+
 
 btn.addEventListener("click", () => {
     // signupform.style.display = "none";
@@ -64,6 +66,19 @@ signinform.addEventListener("submit", (event) => {
 
 
 
+
+googleSignInBtn.addEventListener("click", () => {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            console.log(result.user);
+            alert("Successfully signed in with Google");
+            location.replace("./maain.html"); // Redirect to the main page
+        })
+        .catch((error) => {
+            console.log(error);
+            alert("Google Sign-In failed!");
+        });
+});
 
 
 // regist.addEventListener("click", () => {
