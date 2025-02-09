@@ -1,6 +1,4 @@
 import {  auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase.js";
-// import toastr from "toastr";
-// import "toastr/build/toastr.min.css"; 
 // import { signInWithPopup } from "firebase/auth"
 
 
@@ -34,8 +32,7 @@ signupform.addEventListener("submit", (event) => {
         .then((x) => {
             console.log(x)
             if (x.user) {
-                alert("login successfully")
-                // toastr.success("Data saved successfully!", "Success");
+                alert("okay its nice ")
                 signinform.style.display = "inline-block"
                 signupform.style.display = "none"
                 btn.style.display = "none"
@@ -45,7 +42,7 @@ signupform.addEventListener("submit", (event) => {
 
         }).catch((e) => {
             console.log(e)
-            // ("something is gone")
+            alert("something is gone")
         })
 })
 signinform.addEventListener("submit", (event) => {
