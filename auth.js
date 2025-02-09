@@ -1,13 +1,13 @@
+import {  auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase.js";
+// import toastr from "toastr";
+// import "toastr/build/toastr.min.css"; 
 // import { signInWithPopup } from "firebase/auth"
-import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "./firebase.js";
 
 
 let signupform = document.getElementById("signup");
 let signinform = document.getElementById("signin");
 let btn = document.getElementById("rdlg");
 let regist = document.getElementById("regi");
-let googleSignInBtn = document.getElementById("googleSignIn");
-
 
 btn.addEventListener("click", () => {
     // signupform.style.display = "none";
@@ -34,7 +34,8 @@ signupform.addEventListener("submit", (event) => {
         .then((x) => {
             console.log(x)
             if (x.user) {
-                alert("okay its nice ")
+                alert("login successfully")
+                // toastr.success("Data saved successfully!", "Success");
                 signinform.style.display = "inline-block"
                 signupform.style.display = "none"
                 btn.style.display = "none"
@@ -44,7 +45,7 @@ signupform.addEventListener("submit", (event) => {
 
         }).catch((e) => {
             console.log(e)
-            alert("something is gone")
+            // ("something is gone")
         })
 })
 signinform.addEventListener("submit", (event) => {
@@ -66,19 +67,6 @@ signinform.addEventListener("submit", (event) => {
 
 
 
-
-googleSignInBtn.addEventListener("click", () => {
-    signInWithPopup(auth, provider)
-        .then((result) => {
-            console.log(result.user);
-            alert("Successfully signed in with Google");
-            location.replace("./maain.html"); // Redirect to the main page
-        })
-        .catch((error) => {
-            console.log(error);
-            alert("Google Sign-In failed!");
-        });
-});
 
 
 // regist.addEventListener("click", () => {

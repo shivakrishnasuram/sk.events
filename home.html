@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./auth.js" defer type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
     <style>
         /* General Styles */
         body {
@@ -24,6 +29,7 @@
             color: #333;
             font-size: 2rem;
         }
+
         form {
             /* background: rgba(255, 255, 255, 0.9); */
             backdrop-filter: blur(70px);
@@ -63,16 +69,19 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
-        #regi-img{
+
+        #regi-img {
             width: 20px;
             padding: 5px;
 
         }
+
         input[type="submit"]:hover {
             background: linear-gradient(135deg, #ea5a32, #6a11cb);
             border: 2px solid #6a11cb;
         }
-        form:hover{
+
+        form:hover {
             /* border: #2575fc;
              */
             border: 2px solid black;
@@ -112,20 +121,24 @@
         #rdlg.hidden {
             display: none;
         }
-        #login-logo{
+
+        #login-logo {
             width: 20px;
             padding: 6px 8px 0px 0px;
         }
-        #img-email{
+
+        #img-email {
             width: 20px;
-            margin-top:3px;
-            
+            margin-top: 3px;
+
         }
-        #img-pass{
+
+        #img-pass {
             width: 20px;
         }
     </style>
 </head>
+
 <body>
     <form id="signup" action="">
         <h1><img id="regi-img" src="./registration-svgrepo-com.svg" alt="">sign up page</h1>
@@ -150,8 +163,6 @@
     <!-- <br> -->
     <!-- <br> -->
     <button style="display: none;" id="regi">register here</button>
-    <br>
-    <button id="googleSignIn">Sign in with Google</button>
-
 </body>
+
 </html>
