@@ -6,6 +6,7 @@ let signupform = document.getElementById("signup");
 let signinform = document.getElementById("signin");
 let btn = document.getElementById("rdlg");
 let regist = document.getElementById("regi");
+let darkmode =document.getElementById("dark-mode")
 
 btn.addEventListener("click", () => {
     // signupform.style.display = "none";
@@ -63,7 +64,22 @@ signinform.addEventListener("submit", (event) => {
 })
 
 
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
 
+// Call the function manually to switch to dark mode
+// toggleDarkMode();  // This will immediately apply dark mode when the script runs.
+
+// darkmode.addEventListener("click", () => {
+//     document.body.classList.toggle("dark-mode");
+// });
+
+
+// darkmode.addEventListener("click",()=>{
+//     document.body.style.backgroundColor ="black"
+//     document.body.style.color ="white"
+// })
 
 
 // regist.addEventListener("click", () => {
