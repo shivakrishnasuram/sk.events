@@ -32,12 +32,15 @@ signupform.addEventListener("submit", (event) => {
         .then((x) => {
             console.log(x)
             if (x.user) {
+
+                setTimeout(()=>{
+                    location.assign("loadings.html")
+                },2000)
                 alert("okay its nice ")
                 signinform.style.display = "inline-block"
                 signupform.style.display = "none"
                 btn.style.display = "none"
                 regist.style.display = "block"
-
             }
 
         }).catch((e) => {

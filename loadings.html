@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Loading Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Basic Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #1a1a1a;
+        /* Dark background for premium feel */
+        font-family: 'Arial', sans-serif;
+        color: #fff;
+    }
+
+    /* Loading Container */
+    .loading-container {
+        text-align: center;
+    }
+
+    /* Loading Spinner */
+    .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        /* Light border */
+        border-top: 4px solid #ff7e5f;
+        /* Gradient color for the spinner */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        /* Spin animation */
+    }
+
+    /* Loading Text */
+    .loading-text {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        animation: fade 1.5s infinite alternate;
+        /* Fade animation */
+    }
+
+    /* Keyframes for Spinner Animation */
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Keyframes for Text Fade Animation */
+    @keyframes fade {
+        0% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading...</p>
+    </div>
+</body>
+
+</html>
