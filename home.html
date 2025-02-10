@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./auth.js" defer type="module"></script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: "Neue Plak", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #d5e91f, #5d90e3, rgb(195, 124, 124));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2rem;
+        }
+        form {
+            /* background: rgba(255, 255, 255, 0.9); */
+            backdrop-filter: blur(70px);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            max-width: 300px;
+            min-width: 200px;
+            background: transparent;
+            /* transition: opacity 3s ease; */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #170404;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        #regi-img{
+            width: 20px;
+            padding: 5px;
+
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #ea5a32, #6a11cb);
+            border: 2px solid #6a11cb;
+        }
+        form:hover{
+            /* border: #2575fc;
+             */
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+
+        button {
+            background: transparent;
+            border: 2px solid #6a11cb;
+            color: #6a11cb;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: rgb(231, 181, 181);
+            border-color: transparent;
+        }
+
+        /* Hide/Show Forms */
+        #signin,
+        #regi {
+            display: none;
+        }
+
+        #signin.active,
+        #regi.active {
+            display: block;
+        }
+
+        #signup.hidden,
+        #rdlg.hidden {
+            display: none;
+        }
+        #login-logo{
+            width: 20px;
+            padding: 6px 8px 0px 0px;
+        }
+        #img-email{
+            width: 20px;
+            margin-top:3px;
+            
+        }
+        #img-pass{
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="signup" action="">
+        <h1><img id="regi-img" src="./registration-svgrepo-com.svg" alt="">sign up page</h1>
+        <label for="mails"> <img id="img-email" src="./email-svgrepo-com.svg" alt="">Enter your email</label>
+        <input id="mails" type="email"><br>
+        <label for="passwd"> <img id="img-pass" src="./password-svgrepo-com.svg" alt=""> enter your password</label>
+        <input id="passwd" type="password"><br>
+        <input type="submit">
+    </form>
+    <br><br>
+    <button id="rdlg">already i have an account</button>
+
+    <form style="display: none;" id="signin" action="">
+        <h1><img id="login-logo" src="./loginlogo.svg" alt="">login page</h1>
+        <label for="smail">enter your email</label>
+        <input id="smail" type="email"><br>
+        <label for="spasswd"> enter your password</label>
+        <input id="spasswd" type="password"><br>
+        <br>
+        <input type="submit">
+    </form>
+    <!-- <br> -->
+    <!-- <br> -->
+    <button style="display: none;" id="regi">register here</button>
+</body>
+</html>
