@@ -4,146 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar</title>
+    <title>Responsive Navbar with Dark Mode</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<style>
-    /* Basic Reset */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #333;
-        padding: 1rem 2rem;
-        position: relative;
-    }
-
-    .logo {
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    .nav-links {
-        display: flex;
-        list-style: none;
-    }
-
-    .nav-links li {
-        position: relative;
-    }
-
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        display: block;
-    }
-
-    .nav-links .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #444;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        min-width: 150px;
-    }
-
-    .nav-links .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-
-    .nav-buttons .border-button {
-        background: none;
-        border: 2px solid #fff;
-        color: #fff;
-        padding: 0.5rem 1rem;
-        margin-left: 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .nav-buttons .border-button:hover {
-        border-width: 2px;
-        border-image: linear-gradient(90deg, #ff7e5f, #feb47b) 1;
-        background: linear-gradient(90deg, #ff7e5f, #feb47b);
-        color: #333;
-    }
-
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-    }
-
-    .hamburger .bar {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 4px 0;
-        transition: 0.4s;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-        .nav-links {
-            display: none;
-            flex-direction: column;
-            width: 100%;
-            background-color: #333;
-            position: absolute;
-            top: 100%;
-            left: 0;
-        }
-
-        .nav-links.active {
-            display: flex;
-        }
-
-        .nav-links li {
-            text-align: end;
-            margin-right: 10px;
-        }
-
-        .nav-links .dropdown-menu {
-            position: static;
-            display: none;
-        }
-
-        .nav-links .dropdown:hover .dropdown-menu {
-            display: none;
-        }
-
-        .nav-links .dropdown-menu.active {
-            display: block;
-        }
-
-        .hamburger {
-            display: flex;
-        }
-
-        .nav-buttons {
-            display: none;
-        }
-    }
-</style>
 
 <body>
     <nav class="navbar">
-        <div class="logo">Eventify</div>
+        <div class="logo">S.k.Events</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -160,6 +27,7 @@
         <div class="nav-buttons">
             <button class="border-button">Login</button>
             <button class="border-button">Sign Up</button>
+            <button id="theme-toggle">Dark Mode</button>
         </div>
         <div class="hamburger">
             <span class="bar"></span>
@@ -168,20 +36,7 @@
         </div>
     </nav>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            const dropdown = document.querySelector('.dropdown');
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            });
-            dropdown.addEventListener('click', () => {
-                dropdown.querySelector('.dropdown-menu').classList.toggle('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
