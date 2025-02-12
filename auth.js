@@ -52,7 +52,7 @@ signinform.addEventListener("submit", (event) => {
         .then((x) => {
             console.log(x.user.accessToken)
             if (x.user.accessToken) {
-                location.replace("./maain.html")
+                location.replace("./nav.html")
             }
 
         }).catch((e) => {
