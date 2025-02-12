@@ -11,10 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
+    <script src="./auth.js" defer></script>
 </head>
+
 <style>
-    /* Define CSS Variables for Light Mode */
     :root {
         --bg-color: white;
         --text-color: black;
@@ -22,7 +22,6 @@
         --nav-text: white;
     }
 
-    /* Reset Styles */
     * {
         margin: 0;
         padding: 0;
@@ -45,6 +44,10 @@
         position: relative;
     }
 
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     .logo {
         color: var(--nav-text);
         font-size: 1.5rem;
@@ -54,20 +57,10 @@
     .nav-links {
         display: flex;
         list-style: none;
-
     }
 
     .nav-links li {
         position: relative;
-
-    }
-
-    .nav-links li:hover {
-        position: relative;
-        border-bottom: 1px solid var(--bg-color);
-        border-radius: 0.5px;
-
-
     }
 
     .nav-links a {
@@ -93,7 +86,6 @@
         display: block;
     }
 
-    /* Theme Toggle Button */
     #theme-btn {
         background: none;
         border: 2px solid var(--nav-text);
@@ -108,7 +100,6 @@
         color: var(--nav-bg);
     }
 
-    /* Hamburger Menu */
     .hamburger {
         display: none;
         flex-direction: column;
@@ -123,16 +114,16 @@
         transition: 0.4s;
     }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
         .nav-links {
             display: none;
             flex-direction: column;
-            width: 100%;
-            background-color: var(--nav-bg);
             position: absolute;
-            top: 100%;
-            left: 0;
+            top: 60px;
+            right: 0;
+            background-color: var(--nav-bg);
+            width: 100%;
+            text-align: center;
         }
 
         .nav-links.active {
@@ -143,25 +134,56 @@
             display: flex;
         }
     }
-    
+
+    .main {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-x: auto;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .sub {
+        display: flex;
+        gap: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: larger;
+        padding: 20px;
+        flex-shrink: 0;
+    }
+
+    .card {
+        width: 350px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, black, rgb(77, 3, 147));
+        border-radius: 9px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        flex-shrink: 0;
+    }
 </style>
 
 <body>
-
     <nav class="navbar">
         <div class="logo">S.K. Events</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li class="dropdown">
-                <a href="#">Create Event</a>
+                <a href="#">Events</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Event 1</a></li>
-                    <li><a href="#">Event 2</a></li>
-                    <li><a href="#">Event 3</a></li>
+                    <li><a href="#">My events</a></li>
+                    <li><a href="#">Ongoing</a></li>
+                    <li><a href="#">Upcoming</a></li>
                 </ul>
             </li>
             <li><a href="#">Contact</a></li>
+            <li><a href="#">log out</a></li>
         </ul>
         <button id="theme-btn">Dark Mode</button>
         <div class="hamburger">
@@ -170,36 +192,43 @@
             <span class="bar"></span>
         </div>
     </nav>
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div id="carousels-img" class="carousel-item active">
-                <img style="width: 100%; height: 90%;" src="./pixeldarks.jpg" class="d-block w-100" alt="...">
-                <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur voluptate, animi molestias ipsum voluptates unde mollitia delectus harum recusandae. Consectetur facilis laudantium reiciendis maxime sapiente eveniet voluptates enim aut molestiae!</h2>
+            <div class="carousel-item active">
+                <img src="./pixeldarks.jpg" class="d-block w-100" alt="Image 1">
             </div>
             <div class="carousel-item">
-                <img style="width: 100%; height: 90%;" src="./pixelmain.jpg" class="d-block w-100" alt="...">
-                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aliquid unde, inventore dolorem doloremque, hic suscipit cumque, quis error sint excepturi molestias numquam ipsum debitis ex consequatur similique adipisci autem.</h2>
+                <img src="./pexels-wendywei-1190297.jpg" class="d-block w-100" alt="Image 2">
             </div>
             <div class="carousel-item">
-                <img style="width: 100%; height: 90%;" src="./pexels-wendywei-1190297.jpg" class="d-block w-100" alt="...">
-                <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates animi libero atque, cupiditate soluta maxime ratione vero impedit? Voluptatem et animi ipsa accusantium nam perferendis repellat nihil distinctio laboriosam. Temporibus?</h2>
+                <img src="./pixelmain.jpg" class="d-block w-100" alt="Image 3">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev">
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
 
 
-
-    
+    <div class="main">
+        <div class="sub">
+            <div class="card">Collage Events</div>
+            <div class="card">Music Events</div>
+            <div class="card">Birthday Party's</div>
+            <div class="card">Anniversary Party</div>
+            <div class="card">Valentine's</div>
+            <div class="card">Cricket Events</div>
+            <div class="card">Dj Nights</div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -209,33 +238,22 @@
 
             themeBtn.addEventListener("click", () => {
                 darkMode = !darkMode;
-
-                if (darkMode) {
-                    root.style.setProperty("--bg-color", "black");
-                    root.style.setProperty("--text-color", "white");
-                    root.style.setProperty("--nav-bg", "black");
-                    root.style.setProperty("--nav-text", "white");
-                    themeBtn.textContent = "Light Mode";
-                } else {
-                    root.style.setProperty("--bg-color", "white");
-                    root.style.setProperty("--text-color", "black");
-                    root.style.setProperty("--nav-bg", "white");
-                    root.style.setProperty("--nav-text", "black");
-                    themeBtn.textContent = "Dark Mode";
-                }
+                root.style.setProperty("--bg-color", darkMode ? "black" : "white");
+                root.style.setProperty("--text-color", darkMode ? "white" : "black");
+                root.style.setProperty("--nav-bg", darkMode ? "black" : "white");
+                root.style.setProperty("--nav-text", darkMode ? "white" : "black");
+                themeBtn.textContent = darkMode ? "Light Mode" : "Dark Mode";
             });
 
-            // Hamburger Menu Toggle
             const hamburger = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
 
             hamburger.addEventListener("click", () => {
                 navLinks.classList.toggle("active");
+                hamburger.classList.toggle("active");
             });
         });
     </script>
-
 </body>
 
 </html>
-d4b66f81293

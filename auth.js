@@ -1,7 +1,6 @@
 import {  auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase.js";
 // import { signInWithPopup } from "firebase/auth"
 
-
 let signupform = document.getElementById("signup");
 let signinform = document.getElementById("signin");
 let btn = document.getElementById("rdlg");
@@ -21,6 +20,8 @@ regist.addEventListener("click", () => {
     regist.style.display = "none"
     btn.style.display = "inline-block"
 })
+
+
 
 signupform.addEventListener("submit", (event) => {
     event.preventDefault()
@@ -52,7 +53,7 @@ signinform.addEventListener("submit", (event) => {
         .then((x) => {
             console.log(x.user.accessToken)
             if (x.user.accessToken) {
-                location.replace("./nav.html")
+                location.replace("./navs.html")
             }
 
         }).catch((e) => {
@@ -60,6 +61,7 @@ signinform.addEventListener("submit", (event) => {
             console.log(e)
         })
 })
+
 
 
 
