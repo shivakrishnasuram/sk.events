@@ -7,12 +7,12 @@
     <title>Document</title>
     <script src="./auth.js" defer type="module"></script>
     <script>
-        function openpage(){
-            setInterval(()=>{
-                location.assign("./loadings.html")
-            },2000)
-            // location.replace("./nav.html")
+        function openpage() {
+            setTimeout(() => {
+                location.href = "./navs.html";
+            }, 2000);
         }
+
     </script>
     <style>
         /* General Styles */
@@ -145,7 +145,7 @@
 
         @media (max-width:420px) {
             body {
-                background: url(./Ed\ Sheeran\ Mathematics\ Tour\ 2024.jpeg)  no-repeat !important;
+                background: url(./Ed\ Sheeran\ Mathematics\ Tour\ 2024.jpeg) no-repeat !important;
                 background-size: 100% 100vh;
             }
         }
@@ -174,7 +174,7 @@
         <button onclick="openpage()" style="cursor: pointer;">as a guest</button>
         <input type="submit">
 
-        
+
     </form>
     <!-- <br> -->
     <!-- <br> -->

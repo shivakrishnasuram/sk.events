@@ -61,13 +61,3 @@ signinform.addEventListener("submit", (event) => {
             console.log(e)
         })
 })
-
-
-
-
-
-
-// regist.addEventListener("click", () => {
-//     signinform.style.display = "none";
-//     signupform.style.display = "block"; // Ensure signup form is shown
-// });
