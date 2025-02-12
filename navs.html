@@ -13,6 +13,14 @@
         crossorigin="anonymous"></script>
     <script src="./auth.js" defer></script>
 </head>
+<script>
+    function logout(){
+       setTimeout(()=>{
+        location.replace("./home.html")
+        
+       },1000) 
+    }
+</script>
 
 <style>
     :root {
@@ -183,7 +191,7 @@
                 </ul>
             </li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">log out</a></li>
+            <button onclick="logout()">logout</button>
         </ul>
         <button id="theme-btn">Dark Mode</button>
         <div class="hamburger">
